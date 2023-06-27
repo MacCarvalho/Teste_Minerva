@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="6.3.8" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="167935" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="45103,9010280556" ReportOptions.Description.Text="" ReportOptions.LastChange="45103,9916453009" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="frxDBdsMemdate" DataSetName="Memdate"/>
+    <item DataSet="frxDBdsProductionOrder" DataSetName="ProductionOrder"/>
+    <item DataSet="frxDBdsProductionRecord" DataSetName="ProductionRecord"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" Frame.Typ="0" MirrorMode="0" HGuides.Text="" VGuides.Text="">
+    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="86,92919" Left="0" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="Memo4" AllowVectorExport="True" Left="3,77953" Top="7,55906" Width="706,77211" Height="30,23624" Font.Charset="1" Font.Color="32768" Font.Height="-24" Font.Name="Arial" Font.Style="1" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="RELATÓRIO DE PRODUÇÃO"/>
+      <TfrxMemoView Name="Date" IndexTag="1" AllowVectorExport="True" Left="582,04762" Top="41,57483" Width="128,50402" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0" HAlign="haRight" ParentFont="False" Text="Data: [Date]"/>
+      <TfrxShapeView Name="Shape1" AllowVectorExport="True" Left="0" Top="0" Width="721,89023" Height="86,92919" Frame.Typ="0"/>
+      <TfrxSysMemoView Name="SysMemo1" AllowVectorExport="True" Left="616,06339" Top="64,25201" Width="94,48825" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" HAlign="haRight" ParentFont="False" Text="[PAGE#] de [TOTALPAGES#]"/>
+      <TfrxMemoView Name="frxUDSdtStart" IndexTag="1" AllowVectorExport="True" Left="15,11812" Top="52,91342" Width="272,12616" Height="18,89765" DataSetName="frxUDS" Frame.Typ="0" Text="De: [Memdate.&#34;dtStart&#34;] ate [Memdate.&#34;dtEnd&#34;]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+    </TfrxReportTitle>
+    <TfrxMasterData Name="MasterProduction" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="86,92919" Left="0" Top="166,29932" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBdsProductionOrder" DataSetName="ProductionOrder" RowCount="0">
+      <TfrxMemoView Name="ProductionOrdercod_production_order" IndexTag="1" AllowVectorExport="True" Left="207,87415" Top="7,55906" Width="472,44125" Height="18,89765" DataSet="frxDBdsProductionOrder" DataSetName="ProductionOrder" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="[ProductionOrder.&#34;cod_production_order&#34;] - [ProductionOrder.&#34;des_production_order&#34;]"/>
+      <TfrxMemoView Name="Memo1" AllowVectorExport="True" Left="49,13389" Top="64,25201" Width="109,60637" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="COD-ITEM"/>
+      <TfrxMemoView Name="Memo2" AllowVectorExport="True" Left="173,85838" Top="64,25201" Width="377,953" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="NOME ITEM"/>
+      <TfrxMemoView Name="Memo3" AllowVectorExport="True" Left="585,82715" Top="64,25201" Width="94,48825" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="QTD PRODUZIDA"/>
+      <TfrxMemoView Name="Memo6" AllowVectorExport="True" Left="30,23624" Top="7,55906" Width="170,07885" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="Ordem de produção:"/>
+    </TfrxMasterData>
+    <TfrxDetailData Name="DetailProduction" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="25,67718" Left="0" Top="275,90569" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBdsProductionRecord" DataSetName="ProductionRecord" Filter="&#60;ProductionOrder.&#34;cod_production_order&#34;&#62; = &#60;ProductionRecord.&#34;cod_production_order&#34;&#62;" KeepChild="True" RowCount="0">
+      <TfrxMemoView Name="ProductionRecordcod_item" IndexTag="1" AllowVectorExport="True" Left="49,13389" Top="0" Width="109,60637" Height="18,89765" DataField="cod_item" DataSet="frxDBdsProductionRecord" DataSetName="ProductionRecord" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="[ProductionRecord.&#34;cod_item&#34;]"/>
+      <TfrxMemoView Name="ProductionRecorddes_item" IndexTag="1" AllowVectorExport="True" Left="173,85838" Top="0" Width="377,953" Height="18,89765" DataField="des_item" DataSet="frxDBdsProductionRecord" DataSetName="ProductionRecord" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="[ProductionRecord.&#34;des_item&#34;]"/>
+      <TfrxMemoView Name="ProductionRecordqtd_production_record" IndexTag="1" AllowVectorExport="True" Left="585,82715" Top="0" Width="94,48825" Height="18,89765" DataField="qtd_production_record" DataSet="frxDBdsProductionRecord" DataSetName="ProductionRecord" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="[ProductionRecord.&#34;qtd_production_record&#34;]"/>
+    </TfrxDetailData>
+    <TfrxFooter Name="FooterGeneral" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="52,91342" Left="0" Top="325,03958" Width="718,1107">
+      <TfrxMemoView Name="Memo5" AllowVectorExport="True" Left="291,02381" Top="3,77953" Width="291,02381" Height="18,89765" Font.Charset="1" Font.Color="8388608" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0" HAlign="haRight" ParentFont="False" Text="TOTAL DA ORDEM DE PRODUÇÃO:"/>
+      <TfrxSysMemoView Name="memosumOrder" AllowVectorExport="True" Left="585,82715" Top="3,77953" Width="94,48825" Height="18,89765" Font.Charset="1" Font.Color="8388608" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0" ParentFont="False" Text="[SUM(&#60;ProductionRecord.&#34;qtd_production_record&#34;&#62;,DetailProduction)]"/>
+      <TfrxLineView Name="Line1" AllowVectorExport="True" Left="0" Top="34,01577" Width="718,1107" Height="0" Color="0" Frame.Typ="4"/>
+    </TfrxFooter>
+    <TfrxReportSummary Name="ReportSummary1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="37,7953" Left="0" Top="438,42548" Width="718,1107">
+      <TfrxMemoView Name="Memo7" AllowVectorExport="True" Left="317,48052" Top="11,33859" Width="291,02381" Height="18,89765" Font.Charset="1" Font.Color="4210816" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0" HAlign="haRight" ParentFont="False" Text="TOTAL GERAL:"/>
+      <TfrxSysMemoView Name="SysMemo2" AllowVectorExport="True" Left="612,28386" Top="11,33859" Width="94,48825" Height="18,89765" Font.Charset="1" Font.Color="4210816" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0" ParentFont="False" Text="[SUM(&#60;ProductionRecord.&#34;qtd_production_record&#34;&#62;,DetailProduction,2)]"/>
+    </TfrxReportSummary>
+  </TfrxReportPage>
+</TfrxReport>
